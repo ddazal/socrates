@@ -19,12 +19,16 @@ The agent is **provider-agnostic**, meaning it can work with different LLM provi
 
 - Go 1.20+
 - **For Ollama**: Ollama installed and running with a compatible model (e.g., `qwen2.5-coder:7b`)
+- **For OpenAI**: env var `OPENAI_API_KEY` set
 
 ## Usage
 
 ```bash
 # Run with default task
 go run cmd/socrates/main.go
+
+# Run with OpenAI
+go run cmd/socrates/main.go --provider openai --model gpt-4o --task "Write a background job manager"
 
 # Run with custom task
 go run cmd/socrates/main.go --task "Write an isPrime function in Go"
